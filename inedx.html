@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <!-- Performance & SEO Basics -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StructureCraft | Architecture, Engineering & Inspection Services</title>
+    <meta name="description" content="Expert structural inspections, architectural planning, and engineering consultancy. Serving Bucharest and beyond.">
+    <link rel="icon" href="https://placehold.co/32x32/0E7B6B/FFFFFF/png?text=SC" type="image/png">
+    
+    <!-- OpenGraph & Twitter Meta for Social Sharing -->
+    <meta property="og:title" content="StructureCraft | Expert Engineering Services">
+    <meta property="og:description" content="Expert structural inspections, architectural planning, and engineering consultancy.">
+    <meta property="og:image" content="https://placehold.co/1200x630/0E7B6B/FFFFFF?text=StructureCraft%20Preview">
+    <meta property="og:url" content="https://www.yourdomain.ro">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS Variables & Base Styles */
+        :root {
+            --color-cream: #F9F4EC;
+            --color-emerald: #0E7B6B;
+            --color-dark-text: #1a1a1a; /* Darker text for better contrast */
+            --color-light-accent: #a4ccc8;
+            --color-deep-emerald: #095f54; /* Darker shade for gradient/hover */
+        }
+
+        /* Set default font to Inter, apply theme colors, and add subtle texture */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-cream);
+            color: var(--color-dark-text);
+            /* Subtle background texture/gradient for depth */
+            background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 25%, transparent 25%),
+                              linear-gradient(225deg, rgba(255, 255, 255, 0.5) 25%, transparent 25%),
+                              linear-gradient(45deg, rgba(255, 255, 255, 0.5) 25%, transparent 25%),
+                              linear-gradient(315deg, rgba(255, 255, 255, 0.5) 25%, var(--color-cream) 25%);
+            background-size: 8px 8px; /* Very subtle dots/texture */
+        }
+
+        /* Custom utility classes for the emerald theme */
+        .bg-emerald-main { background-color: var(--color-emerald); }
+        .text-emerald-main { color: var(--color-emerald); }
+        .border-emerald-main { border-color: var(--color-emerald); }
+
+        /* Tasteful Effects: Richer Shadows & Depth (More Eye-Catching) */
+        .card-shadow {
+            box-shadow: 0 15px 35px -8px rgba(14, 123, 107, 0.15), 0 6px 10px -3px rgba(14, 123, 107, 0.08); /* Richer, deeper shadow */
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .card-shadow:hover {
+            transform: translateY(-6px); /* More pronounced lift */
+            box-shadow: 0 30px 60px -15px rgba(14, 123, 107, 0.3), 0 15px 20px -5px rgba(14, 123, 107, 0.15);
+        }
+        
+        /* Premium Button Style (Applied to primary CTAs) */
+        .btn-premium {
+            background-image: linear-gradient(to right, var(--color-emerald) 0%, var(--color-deep-emerald) 100%);
+            box-shadow: 0 5px 15px rgba(14, 123, 107, 0.4);
+        }
+        .btn-premium:hover {
+            background-image: linear-gradient(to right, var(--color-deep-emerald) 0%, var(--color-emerald) 100%);
+        }
+
+        /* Services Card Hover Effect */
+        .service-card:hover {
+            background-color: rgba(14, 123, 107, 0.04); /* Subtle cream to light green tint */
+        }
+
+        /* Smooth Scroll Behavior for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Floating Buttons Container */
+        .floating-buttons {
+            position: fixed;
+            bottom: 24px; /* Slightly more space */
+            right: 24px;
+            z-index: 50; 
+            display: flex;
+            flex-direction: column;
+            gap: 16px; /* Increased gap */
+        }
+
+        /* Floating Button Style */
+        .float-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* Slightly larger */
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--color-emerald); 
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1); /* More pronounced scale */
+        }
+
+        /* Import Icons */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
+    </style>
+</head>
+<body>
+
+    <!-- Floating Contact Buttons -->
+    <div class="floating-buttons" id="floating-buttons">
+        <!-- Phone Button (tel:) -->
+        <a href="tel:+40722123456" class="float-btn group" title="Call Us Now">
+            <img src="./assests/icons8-phone-24.png"/>
+        </a>
+        <!-- WhatsApp Button (wa.me) -->
+        <a href="https://wa.me/40722123456?text=Hello%2C%20I%20would%20like%20to%20request%20a%20quote%20for%20an%20inspection." 
+           target="_blank" rel="noopener noreferrer" class="float-btn group" title="Message on WhatsApp">
+           <img src="./assests/icons8-whatsapp-48.png"/>
+        </a>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-sm card-shadow shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="h-20 w-20 tracking-tight"> <img src="./assests/logo.jpeg"/> </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#services" class="text-dark-text hover:text-emerald-main transition duration-200 font-semibold">Services</a>
+                <a href="#calculator" class="text-dark-text hover:text-emerald-main transition duration-200 font-semibold">Quote</a>
+                <a href="#about" class="text-dark-text hover:text-emerald-main transition duration-200 font-semibold">About Us</a>
+                <a href="#contact" class="px-5 py-2 rounded-xl bg-emerald-main text-white hover:bg-[#086a5d] transition duration-200 font-semibold card-shadow">Contact Now</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button class="md:hidden text-3xl text-dark-text hover:text-emerald-main">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section - More impactful design -->
+        <section class="relative pt-16 pb-12 md:pt-24 md:pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12 lazy-load" id="hero">
+            <div class="md:w-1/2 relative z-10">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-6">
+                    Engineering <span class="text-emerald-main">Excellence</span> for <span class="text-dark-text/90">Lasting Structures</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-dark-text/80 mb-10">
+                    We deliver meticulous **structural inspections**, certified engineering reports, and forward-thinking architectural consultancy across Romania.
+                </p>
+                <!-- Premium Button for high visibility -->
+                <a href="#contact" class="inline-block px-10 py-4 text-xl font-bold rounded-xl text-white transition duration-300 card-shadow btn-premium">
+                    Get a Free Consultation
+                </a>
+            </div>
+            <div class="md:w-1/2 w-full lazy-load relative">
+                <!-- High-quality, lazy-loaded image placeholder with subtle hover effect -->
+                <img data-src="./assests/banner.png" 
+                     alt="Modern building design rendering and blueprints" 
+                     class="w-full h-auto object-cover rounded-xl card-shadow lazy-image transition duration-500 hover:rotate-1 hover:scale-[1.02]" 
+                     loading="lazy">
+                
+                <!-- Small decorative emerald accent -->
+                <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-emerald-main/20 rounded-tl-3xl rounded-br-3xl hidden md:block"></div>
+            </div>
+        </section>
+
+        <!-- Services Section - Enhanced Card Hover -->
+        <section id="services" class="py-16 md:py-24 bg-white shadow-inner lazy-load border-t border-b border-light-accent/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-12 text-dark-text">Our Core Expertise</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1: Structural Inspections -->
+                    <div class="bg-cream p-8 rounded-xl card-shadow flex flex-col items-start service-card">
+                        <i class="fas fa-building text-5xl text-emerald-main mb-4"></i>
+                        <h3 class="text-2xl font-semibold mb-3">Structural Assessments</h3>
+                        <p class="text-dark-text/80 leading-relaxed">In-depth evaluations of existing structures to determine integrity, safety, and compliance with seismic codes. Essential for buying or renovating properties.</p>
+                        <a href="#contact" class="mt-4 text-emerald-main hover:text-dark-text font-semibold transition duration-200 group flex items-center">
+                            Request Inspection 
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                    <!-- Service 2: Architectural Planning -->
+                    <div class="bg-cream p-8 rounded-xl card-shadow flex flex-col items-start service-card">
+                        <i class="fas fa-drafting-compass text-5xl text-emerald-main mb-4"></i>
+                        <h3 class="text-2xl font-semibold mb-3">Architectural Planning</h3>
+                        <p class="text-dark-text/80 leading-relaxed">From concept to completion, we manage the design, permitting, and documentation for new construction and significant renovation projects.</p>
+                        <a href="#contact" class="mt-4 text-emerald-main hover:text-dark-text font-semibold transition duration-200 group flex items-center">
+                            Request Planning 
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                    <!-- Service 3: Engineering Consultancy -->
+                    <div class="bg-cream p-8 rounded-xl card-shadow flex flex-col items-start service-card">
+                        <i class="fas fa-cogs text-5xl text-emerald-main mb-4"></i>
+                        <h3 class="text-2xl font-semibold mb-3">Engineering Consultancy</h3>
+                        <p class="text-dark-text/80 leading-relaxed">Specialized consultation on complex engineering problems, including materials science, construction feasibility, and cost optimization.</p>
+                        <a href="#contact" class="mt-4 text-emerald-main hover:text-dark-text font-semibold transition duration-200 group flex items-center">
+                            Request Consultation 
+                            <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Quote Calculator Section - Improved visual prominence -->
+        <section id="calculator" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lazy-load">
+            <h2 class="text-4xl font-bold text-center mb-6 text-dark-text">Estimate Your Annual Inspection Cost</h2>
+            <p class="text-center text-xl text-dark-text/70 mb-10">Get a quick, non-binding estimate in RON/Year for maintaining your building's structural health.</p>
+            
+            <div class="max-w-3xl mx-auto bg-white p-8 sm:p-12 rounded-2xl card-shadow border-4 border-emerald-main/50">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <!-- Input: Area -->
+                    <div>
+                        <label for="area" class="block text-lg font-semibold mb-2 text-dark-text">Building Area (sqm)</label>
+                        <input type="number" id="area" value="100" min="10" placeholder="e.g., 100" 
+                               class="w-full px-5 py-3 border-2 border-light-accent rounded-xl text-lg focus:ring-emerald-main focus:border-emerald-main transition duration-150">
+                    </div>
+                    <!-- Input: Complexity -->
+                    <div>
+                        <label for="complexity" class="block text-lg font-semibold mb-2 text-dark-text">Structural Complexity</label>
+                        <select id="complexity" 
+                                class="w-full px-5 py-3 border-2 border-light-accent rounded-xl text-lg focus:ring-emerald-main focus:border-emerald-main transition duration-150 appearance-none bg-white">
+                            <option value="1.0">Low (Simple Commercial/Residential)</option>
+                            <option value="1.5" selected>Medium (Standard Multi-story)</option>
+                            <option value="2.0">High (Complex Industrial/Historical)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Result Display - Larger and clearly highlighted -->
+                <div class="p-8 bg-emerald-main rounded-xl text-white text-center shadow-lg">
+                    <p class="text-xl font-medium mb-3">Your Estimated Annual Inspection Cost:</p>
+                    <p id="result" class="text-5xl font-extrabold text-cream">0 RON / Year</p>
+                    <p class="text-sm mt-4 text-white/90">*This is an estimate. A final quote requires a site visit.</p>
+                </div>
+                
+                <!-- Premium Button for high visibility -->
+                <button onclick="calculateCost()" class="mt-8 w-full px-6 py-4 text-xl font-bold rounded-xl text-white transition duration-300 card-shadow btn-premium">
+                    Get Precise Estimate &rarr;
+                </button>
+            </div>
+        </section>
+
+        <!-- About/Testimonials Section - Improved readability -->
+        <section id="about" class="py-16 md:py-24 bg-cream/70 shadow-inner lazy-load">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center mb-16 text-dark-text">Why Choose StructureCraft?</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <!-- Image Placeholder: Engineering blueprint or team photo -->
+                    <div class="lazy-load order-2 lg:order-1">
+                        <img data-src="./assests/team3.png" 
+                             alt="Engineers reviewing blueprints on site" 
+                             class="w-full h-auto object-cover rounded-xl card-shadow lazy-image transform transition duration-500 hover:rotate-[-1deg] hover:scale-[1.02]"
+                             loading="lazy"
+                             onerror="this.onerror=null; this.src='https://placehold.co/800x600/AAAAAA/333333?text=Image+Loading+Error';">
+                    </div>
+                    <!-- Testimonial / Story -->
+                    <div class="order-1 lg:order-2">
+                        <blockquote class="text-2xl italic text-dark-text/90 border-l-4 border-emerald-main pl-6 mb-8 leading-snug">
+                            "StructureCraft provided a critical seismic assessment that saved our historic building from costly, unnecessary retrofitting. Their expertise is unmatched."
+                        </blockquote>
+                        <cite class="block font-bold text-lg text-emerald-main">- Maria Popescu, Lead Developer, Bucharest</cite>
+                        
+                        <div class="mt-10">
+                            <h3 class="text-3xl font-bold mb-4 text-emerald-main">Our Commitment to Safety</h3>
+                            <p class="text-dark-text/80 text-lg leading-relaxed">
+                                Every project is handled by certified engineers with decades of combined experience. We prioritize **structural safety, regulatory compliance, and budget efficiency** to deliver reliable results every time. Trust us to build or maintain your legacy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section - Larger inputs and button -->
+        <section id="contact" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lazy-load">
+            <h2 class="text-4xl font-bold text-center mb-6 text-dark-text">Ready to Start Your Project?</h2>
+            <p class="text-center text-xl text-dark-text/70 mb-12">Send us a message and we'll reply within one business day.</p>
+            
+            <form id="contact-form" class="max-w-2xl mx-auto bg-white p-8 sm:p-12 rounded-2xl card-shadow border border-emerald-main/20">
+                <div class="space-y-6">
+                    <div>
+                        <label for="contact-name" class="block text-lg font-semibold mb-2 text-dark-text">Your Name</label>
+                        <input type="text" id="contact-name" name="name" required
+                               class="w-full px-5 py-3 border-2 border-light-accent rounded-xl focus:ring-emerald-main focus:border-emerald-main transition duration-150 text-lg">
+                    </div>
+                    <div>
+                        <label for="contact-email" class="block text-lg font-semibold mb-2 text-dark-text">Email Address</label>
+                        <input type="email" id="contact-email" name="email" required
+                               class="w-full px-5 py-3 border-2 border-light-accent rounded-xl focus:ring-emerald-main focus:border-emerald-main transition duration-150 text-lg">
+                    </div>
+                    <div>
+                        <label for="contact-message" class="block text-lg font-semibold mb-2 text-dark-text">Your Project Details / Message</label>
+                        <textarea id="contact-message" name="message" rows="5" required
+                                  class="w-full px-5 py-3 border-2 border-light-accent rounded-xl focus:ring-emerald-main focus:border-emerald-main transition duration-150 text-lg"></textarea>
+                    </div>
+                    <!-- Premium Button for high visibility -->
+                    <button type="submit" class="w-full px-6 py-4 text-xl font-bold rounded-xl text-white transition duration-300 card-shadow btn-premium">
+                        Send Inquiry
+                    </button>
+                    <p id="form-status" class="text-center text-base mt-4 opacity-0 transition duration-300"></p>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-emerald-main py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white text-center">
+            <p class="mb-4 text-lg font-semibold">&copy; 2025 StructureCraft Engineering. All rights reserved.</p>
+            <div class="space-x-6 text-white/80">
+                <a href="#services" class="hover:text-cream transition duration-200">Our Services</a>
+                <span class="text-white/50">|</span>
+                <a href="mailto:info@structurecraft.ro" class="hover:text-cream transition duration-200">Email: info@structurecraft.ro</a>
+                <span class="text-white/50">|</span>
+                <a href="tel:+40722123456" class="hover:text-cream transition duration-200">Call: +40 722 123 456</a>
+            </div>
+            <p class="text-sm mt-6 text-white/70">Expertise in structural safety and compliance for modern and historic buildings.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Block -->
+    <script>
+        // --- Configuration Constants (Easy to Edit) ---
+        const EMAIL_RECEIVER = "info@structurecraft.ro";
+        const SUBJECT_PREFIX = "[StructureCraft Inquiry]";
+        const BASE_RATE_RON_SQM_YEAR = 5; // RON per square meter per year
+        
+        // --- 1. Annual Cost Calculator Logic ---
+        function calculateCost() {
+            const areaInput = document.getElementById('area');
+            const complexitySelect = document.getElementById('complexity');
+            const resultElement = document.getElementById('result');
+
+            // Sanitize inputs
+            const area = parseFloat(areaInput.value) || 0;
+            const complexity = parseFloat(complexitySelect.value) || 1.0;
+
+            if (area < 0) {
+                resultElement.textContent = "Area cannot be negative.";
+                resultElement.classList.remove('text-cream');
+                resultElement.classList.add('text-red-300'); // Use lighter red for dark background
+                return;
+            }
+
+            // Calculation formula: Area * Base Rate * Complexity Multiplier
+            const estimatedCost = area * BASE_RATE_RON_SQM_YEAR * complexity;
+            
+            // Format and display the result
+            const formattedCost = estimatedCost.toLocaleString('ro-RO', { 
+                minimumFractionDigits: 0, 
+                maximumFractionDigits: 0 
+            });
+
+            resultElement.textContent = `${formattedCost} RON / Year`;
+            resultElement.classList.remove('text-red-300');
+            resultElement.classList.add('text-cream');
+        }
+
+        // Run calculation once on load to show initial value
+        document.addEventListener('DOMContentLoaded', () => {
+            calculateCost();
+            // Attach event listeners to recalculate on input change
+            document.getElementById('area').addEventListener('input', calculateCost);
+            document.getElementById('complexity').addEventListener('change', calculateCost);
+        });
+
+        // --- 2. Mailto Contact Form Handling ---
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+            const statusElement = document.getElementById('form-status');
+
+            // Construct the email body
+            const emailBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+            
+            // Encode subject and body for the mailto link
+            const encodedSubject = encodeURIComponent(`${SUBJECT_PREFIX} from ${name}`);
+            const encodedBody = encodeURIComponent(emailBody);
+
+            // Construct the mailto URL
+            const mailtoUrl = `mailto:${EMAIL_RECEIVER}?subject=${encodedSubject}&body=${encodedBody}`;
+
+            // Open the user's default email client
+            window.location.href = mailtoUrl;
+
+            // Update status message
+            statusElement.textContent = "Opening your email client...";
+            statusElement.classList.remove('text-red-600');
+            statusElement.classList.add('text-emerald-main');
+            statusElement.classList.add('opacity-100');
+
+            // Optional: Hide status after a few seconds
+            setTimeout(() => {
+                statusElement.classList.remove('opacity-100');
+            }, 5000);
+            
+            // Clear the form after submission attempt
+            this.reset();
+        });
+
+        // --- 3. Simple Intersection Observer for Lazy Loading ---
+        // Uses the 'data-src' attribute for images
+        window.onload = function() {
+            const lazyImages = document.querySelectorAll('.lazy-image');
+            const lazySections = document.querySelectorAll('.lazy-load');
+
+            const options = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% of element visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const target = entry.target;
+                        
+                        // Handle images
+                        if (target.tagName === 'IMG') {
+                            const src = target.getAttribute('data-src');
+                            if (src) {
+                                target.src = src;
+                                target.removeAttribute('data-src');
+                            }
+                        }
+
+                        // Handle section/text content visibility (fade-in effect)
+                        target.classList.add('loaded');
+                        
+                        // Stop observing the element once it's loaded
+                        observer.unobserve(target);
+                    }
+                });
+            }, options);
+
+            // Observe all target elements
+            lazyImages.forEach(img => observer.observe(img));
+            lazySections.forEach(section => observer.observe(section));
+        };
+    </script>
+</body>
+</html>
